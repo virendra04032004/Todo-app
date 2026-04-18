@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1>✅ Todo App</h1>
+
+  <!-- ── Add Todo ───────────────────────────────────────────── -->
+  <div class="container">
+    <h2>Add Todo</h2>
+    <div class="sub-container" style="flex-direction: column; gap: 10px;">
+      <form id="todo-form" onsubmit="handleAdd(event)">
+        <input type="text" id="inp-text" placeholder="What needs to be done?" required />
+        <select id="inp-priority">
+          <option value="medium">🟡 Medium</option>
+          <option value="high">🔴 High</option>
+          <option value="low">🔵 Low</option>
+        </select>
+        <button type="submit">+ Add</button>
+      </form>
+      <div id="form-error"></div>
+    </div>
+  </div>
+
+  <!-- ── Stats ─────────────────────────────────────────────── -->
+  <div class="container">
+    <h2>Overview</h2>
+    <div class="stats-row">
+      <div class="stat-card total">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-card active">
+        <span class="stat-num" id="stat-active">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat-card done">
+        <span class="stat-num" id="stat-done">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div style="width:90%; background:white; border:2px solid black; border-radius:10px; overflow:hidden; height:22px;">
+      <div id="progress-bar" style="height:100%; background:black; width:0%; transition:width 0.4s ease; border-radius:8px;"></div>
+    </div>
+    <div id="progress-label" style="font-family:'Kirang Haerang',system-ui; font-size:15px; color:#333;">0% complete</div>
+  </div>
+
+  <!-- ── Todo List ──────────────────────────────────────────── -->
+  <div class="container">
+    <h2>My Todos</h2>
+
+    <div class="controls-row">
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all"       onclick="setFilter('all',this)">All</button>
+        <button class="filter-btn"        data-filter="active"    onclick="setFilter('active',this)">Active</button>
+        <button class="filter-btn"        data-filter="completed" onclick="setFilter('completed',this)">Completed</button>
+      </div>
+      <button class="clear-btn" onclick="clearCompleted()">🗑️ Clear Completed</button>
+    </div>
+
+    <div class="sub-container" style="flex-direction:column;">
+      <ul id="todo-list">
+        <li class="empty-state">Loading todos…</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+    
+</body>
+</html>
