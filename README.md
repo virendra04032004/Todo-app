@@ -95,13 +95,13 @@ Valid priorities: `low`, `medium`, `high`
 
 ## Features
 
-- ✅ Add todos with text and priority (High / Medium / Low)
-- ✅ Mark todos as complete with a checkbox
-- ✅ Inline edit — click Edit to change text in place
-- ✅ Delete individual todos
-- ✅ Clear all completed todos at once
-- ✅ Filter by All / Active / Completed
-- ✅ Stats overview (total, active, completed)
-- ✅ Progress bar showing % completion
-- ✅ Toast notifications for all actions
-- ✅ Matching Kirang Haerang font styling
+-  Add todos with text and priority (High / Medium / Low)
+-  Mark todos as complete with a checkbox
+-  Inline edit — click Edit to change text in place
+-  Delete individual todos
+-  Clear all completed todos at once
+-  Filter by All / Active / Completed
+-  Stats overview (total, active, completed)
+-  Progress bar showing % completion
+-  Toast notifications for all actions
+-  Matching Kirang Haerang font styling
